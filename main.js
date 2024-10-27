@@ -25,6 +25,7 @@ const rectangle = document.getElementById('rectangle');
 const circle = document.getElementById('circle');
 function drawRectangle(x,y){
     ctx.fillRect(10,10,x,y);
+    ctx.fill();
 };
 canvas.addEventListener("click",e => {
 drawRectangle(e.offsetX, e.offsetY)
@@ -33,6 +34,7 @@ function drawLine(x,y){
     ctx.beginPath();
     ctx.moveTo(x,y);
     ctx.lineTo(x,y);
+    ctx.fill();
 };
 canvas.addEventListener("click",e => {
 drawLine(e.offsetX, e.offsetY)
@@ -44,4 +46,9 @@ function drawCircle(x,y){
 };
 canvas.addEventListener("click",e => {
 drawCircle(e.offsetX, e.offsetY)
+});
+//Task4:Add Color Selection and Canvas Clearing
+const color = document.getElementById('colorPicker');
+document.querySelector('clearCanvas').addEventListener("click",() =>{
+ctx.clearRect(0,0,width,height);
 });
